@@ -18,17 +18,20 @@ void selection_sort(int *array, size_t size)
 			if (array[min_idx] > array[j])
 				min_idx = j;
 		}
-		tmp = array[i];
-		array[i] = array[min_idx];
-		array[min_idx] = tmp;
-
-		for (k = 0; k < size; k++)
+		if (array[min_idx] != array[i])
 		{
-			if (k < size - 1)
-				printf("%d, ", array[k]);
-			else
-				printf("%d", array[k]);
+			tmp = array[i];
+			array[i] = array[min_idx];
+			array[min_idx] = tmp;
+
+			for (k = 0; k < size; k++)
+			{
+				if (k < size - 1)
+					printf("%d, ", array[k]);
+				else
+					printf("%d", array[k]);
+			}
+			printf("\n");
 		}
-		printf("\n");
 	}
 }
