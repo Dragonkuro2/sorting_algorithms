@@ -50,7 +50,7 @@ void qs(int *array, int first, int last, size_t size)
 
 	if (first < last)
 	{
-		pivot = partition(array, first, last, size);
+		pivot = parti(array, first, last, size);
 		qs(array, first, pivot - 1, size);
 		qs(array, pivot + 1, last, size);
 	}
